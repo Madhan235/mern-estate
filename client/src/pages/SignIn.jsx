@@ -3,6 +3,9 @@ import { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInStart,signInSuccess,signInFailure } from '../redux/user/userSlice'
+import Oauth from '../components/Oauth';
+ 
+ 
 
 
 export default function SignIn() {
@@ -27,7 +30,7 @@ setFormData({
       const res = await fetch('/api/auth/signin', 
         {method: 'POST',
           headers:{
-            'Content-Type': 'application/json',
+            'Content-Type':'application/json',
             
           },
           body:JSON.stringify(formData)
@@ -58,6 +61,7 @@ setFormData({
         <input type="password" placeholder='password' className='border p-3 rounded-lg' id='password' onChange={hanldeChange}/>
 
         <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'> {loading ? "Loading..." : "Sign In" } </button>
+       <Oauth/>
       </form>
       <div className="flex gap-2 mt-5 ">
         <p> Dont Have an account ? </p>
