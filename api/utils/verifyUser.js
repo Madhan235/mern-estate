@@ -12,5 +12,4 @@ if(!token) return next(errorHandler(401,"UnAuthorized"));
     })
 
 
-
 }
