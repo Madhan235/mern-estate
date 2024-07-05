@@ -154,8 +154,10 @@ export default function Profile() {
         setloadingListings(false);
         return;
       }
+      
       setloadingListings(false);
       setUserListings(data);
+      setShowListingsError(false);
     } catch (error) {
       setShowListingsError(true);
       setloadingListings(false);
@@ -272,6 +274,8 @@ export default function Profile() {
       >
         {loadingListings ? "Loading..." : "Show listings"}
       </button>
+
+      
       <p className="text-red-700">
         {showListingsError ? "Error showing listing" : ""}
       </p>
