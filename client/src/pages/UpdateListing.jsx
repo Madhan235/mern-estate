@@ -165,7 +165,7 @@ const params = useParams();
     if(data.success === false){
      setError(data.message);  
     }
-    navigate(`/lisiting/${data._id}`)
+    navigate(`/listing/${data._id}`)
 
    } catch (error) {
     setError(error.message);
