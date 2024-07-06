@@ -144,7 +144,7 @@ export default function Listing() {
                 Contact landlord
               </button>
             )}
-            {contact && <Contact listing={listing} />}
+            {contact && <Contact listing={listing} contact={contact} setContact={setContact} />}
           </div>
         </div>
       )}

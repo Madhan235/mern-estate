@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaXmark } from "react-icons/fa6";
 
-export default function Contact({ listing }) {
+
+export default function Contact({ listing, contact,setContact }) {
   const [landlord, setLandlord] = useState(null);
   const [message, setMessage] = useState("");
 
@@ -36,6 +38,8 @@ export default function Contact({ listing }) {
             for{" "}
             <span className="font-semibold">{listing.name.toLowerCase()}</span>
           </p>
+          <div className="flex">
+
           <textarea
             name="message"
             id="message"
@@ -44,10 +48,14 @@ export default function Contact({ listing }) {
             onChange={handleChange}
             placeholder="Enter your message here..."
             className="w-full border p-3 rounded-lg "
-          ></textarea>
+            ></textarea>
+
+       <FaXmark onClick={()=>setContact(!contact)} className="text-2xl"/>
+            </div>
+
           <Link
             to={`mailto:${landlord.email}?subject=Regarding ${listing.name}&body=${message}`}
-            
+
             className="bg-slate-700 text-white text-center p-3 uppercase rounded-lg hover:opacity-95 "
           >
             Send Message
