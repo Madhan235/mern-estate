@@ -35,7 +35,7 @@ import Search from './pages/Search'
 
      <Route path='/listing/:listingId' element={<Listing/>}/>
 
-     <Route path='/search?:searchTerm' element={<Search/>}/>
+     <Route path='/search' element={<Search/>}/>
 
     </Routes>
     </BrowserRouter>
